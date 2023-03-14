@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallina rimbalzina</title>
+    <style>
+
+        .ball {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            position: relative;
+            animation-name: rimbalza;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+    
+        @keyframes rimbalza {
+
+            0% {
+                top: 0;
+                transform: scale(1, 1);
+            }
+
+            45% {
+
+                top: 450px;
+                transform: scale(1, 1);
+            }
+
+            46% {
+                top: 460px;
+                transform: scale(1, 0.9);
+            }
+
+            47% {
+                top: 470px;
+                transform: scale(1, 0.8);
+            }
+
+            48% {
+                top: 480px;
+                transform: scale(1, 0.7);
+            }
+
+            49% {
+                top: 490px;
+                transform: scale(1, 0.6);
+            }
+
+            50% {
+                top: 500px;
+                transform: scale(1, 0.5);
+                box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5); 
+            }
+
+            75% {
+                top: 250px;
+                transform: scale(1, 0.8);
+            }
+
+            100% {
+                top: 0;
+                transform: scale(1, 1);
+            }
+        }
+
+
+        /*    
+        .pallina{
+
+            height: 100px;
+            width: 100px;
+            border: solid 2px blueviolet;
+            background-color: blueviolet;
+            border-radius: 50%;
+            margin:auto;
+            margin-top: 20em;
+            animation-name: bluPalla;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+
+        @keyframes bluPalla {
+             
+           0% {
+            height: 70px;
+            width: 100px;
+           }
+
+           25% {
+            height: 80px;
+            width: 100px;
+
+           }
+
+           50% {
+            height: 105px;
+            width: 100px;
+            transform: translateY(-300px);
+           }
+
+           75% {
+            height: 100px;
+            width: 100px;
+           }
+
+           100% {
+            height: 70px;
+            width: 110px;
+           }
+        } */
+
+    </style>
+</head>
+
+<body>
+   
+    <!-- <div class="pallina"></div> -->
+
+    <div class="container">
+        <div class="ball"></div>
+        <div class="ombra"></div>
+    </div>
+
+    
+</body>
+</html>

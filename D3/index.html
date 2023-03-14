@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.108.0">
+  <title>Album example · Bootstrap v5.3</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/grid/">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    /*CSS delle grigle*/
+    .themed-grid-col {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      background-color: rgba(86, 61, 124, .15);
+      border: 1px solid rgba(86, 61, 124, .2);
+    }
+
+    .themed-container {
+      padding: .75rem;
+      margin: 200px;
+      margin-bottom: 1.5rem;
+      background-color: rgba(0, 123, 255, .15);
+      border: 1px solid rgba(0, 123, 255, .2);
+    }
+
+    ul {
+      list-style-type: none;
+      color: black;
+    }
+
+    .carousel {
+      margin-bottom: 4rem;
+    }
+
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+      bottom: 3rem;
+      z-index: 10;
+    }
+
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+      height: 32rem;
+    }
+
+    #myCarousel {
+      margin-bottom: 0%;
+    }
+
+    .list-group-item {
+      background-color: darkred;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-success" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Naviga</h4>
+            <ul class="text-white">
+              <li><a href="#Preferiti" class="text-white">Preferiti</a></li>
+              <li><a href="#Consigliati" class="text-white">Consigliati</a></li>
+              <li><a href="#Sconsigliati" class="text-white">Sconsigliati</a></li>
+              <li><a href="#Recensioni" class="text-white">Recensioni</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contatti</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-success shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
+            viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" />
+          </svg>
+          <strong>MessanaFy</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!--carosello-->
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../D3/assets/capelli rossi.jpg" alt="capelli" width="100%" height="100%">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Example headline.</h1>
+              <p>Some representative placeholder content for the first slide of the carousel.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../D3/assets/blackice.jpg" alt="capelli" width="100%" height="100%">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../D3/assets/the-beatles-album-covers-sgt-peppers-lonely-hearts-club-band-entertainment-music-hd-art-wallpaper-preview.jpg" alt="capelli" width="100%" height="100%">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>One more for good measure.</h1>
+              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    <!--Preferiti-->
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <h1>Preferiti<a name="Preferiti"></a></h1><br>
+        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr><hr><hr><hr>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Consigliati-->
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <h1>Consigliati <a name="Consigliati"></a></h1><br>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul>
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <h1>LE HIT DEL MOMENTO <a name="Consigliati"></a></h1><br>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/lovers-in-Japan.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/Santana-just-feel-better.jpeg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+          <div class="col col-sm-4 my-1 my-sm-0">
+            <div class="card bg-success shadow-sm">
+              <img src="/Modulo tre/D3/assets/happy-now-cover-web.jpg" alt="album" width="100%" height="225">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--sezione album che non mi piacciono-->
+    <div class="album py-5 bg-secondary">
+      <div class="container">
+        <h1>Sconsigliati<a name="Sconsigliati"></a></h1><br>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col-12 col-sm-4 my-1 my-sm-0">
+            <div class="card bg-danger shadow-sm">
+              <img src="/Modulo tre/D3/assets/Dark-Polo-Gang-Trap-Lovers-Album-Cover.jpg" alt="album" width="100%"
+                height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 my-1 my-sm-0">
+            <div class="card bg-danger shadow-sm">
+              <img src="/Modulo tre/D3/assets/One-Direction.jpeg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 my-1 my-sm-0">
+            <div class="card bg-danger shadow-sm">
+              <img src="/Modulo tre/D3/assets/Believe-JB-Album.jpg" alt="album" width="100%" height="225">
+              <div class="card-body">
+                <p class="card-text">
+                <ul style="list-style-type:none;">
+                  <li>Viva la Vida!</li>
+                  <li>Coldplay</li>
+                  <li>rock</li>
+                  <li>100 min</li>
+                </ul>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--hall of shame-->
+      <div class="row m-auto text-center w-50">
+        <h3>HALL OF SHAME</h3>
+        <div class="col-sm-4 themed-grid-col p-0"><div class="card bg-danger shadow-sm">
+          <img src="/Modulo tre/D3/assets/Believe-JB-Album.jpg" alt="album" width="100%" height="225">
+          <div class="card-body">
+            <p class="card-text">
+            <ul style="list-style-type:none;">
+              <li>Viva la Vida!</li>
+              <li>Coldplay</li>
+              <li>rock</li>
+              <li>100 min</li>
+            </ul>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-sm-4 themed-grid-col p-0"><div class="card bg-danger shadow-sm">
+          <img src="/Modulo tre/D3/assets/Believe-JB-Album.jpg" alt="album" width="100%" height="225">
+          <div class="card-body">
+            <p class="card-text">
+            <ul style="list-style-type:none;">
+              <li>Viva la Vida!</li>
+              <li>Coldplay</li>
+              <li>rock</li>
+              <li>100 min</li>
+            </ul>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-sm-4 themed-grid-col p-0"><div class="card bg-danger shadow-sm">
+          <img src="/Modulo tre/D3/assets/Believe-JB-Album.jpg" alt="album" width="100%" height="225">
+          <div class="card-body">
+            <p class="card-text">
+            <ul style="list-style-type:none;">
+              <li>Viva la Vida!</li>
+              <li>Coldplay</li>
+              <li>rock</li>
+              <li>100 min</li>
+            </ul>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <!--per fare recensioni-->
+      <h3>Cosa dicono gli altri utenti? Leggilo in tempo reale!<a name="Recensioni"></a></h3>
+      <div class="list-group w-auto">
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <img src="../D3/assets/procione-679x350.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+              <h6 class="mb-0">Andrea Messana:</h6>
+              <p class="mb-0 opacity-75">Ma che gusti hai... vada via ai ciapa! </p>
+            </div>
+            <small class="opacity-50 text-nowrap">now</small>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <img src="../D3/assets/riccio2.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+              <h6 class="mb-0">Ilde Stramandinoli:</h6>
+              <p class="mb-0 opacity-75">Ora capisco perchè ci sono pochi programmatori...</p>
+            </div>
+            <small class="opacity-50 text-nowrap">3d</small>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <img src="../D3/assets/Balto-05-e-commerce.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+              <h6 class="mb-0">Gianluca Cobucci:</h6>
+              <p class="mb-0 opacity-75">Mi vengono in mente le parole del mio artista preferito: quando hanno
+                distruibuito l'altezza, lui era in fila per la carbonara...</p>
+            </div>
+            <small class="opacity-50 text-nowrap">1w</small>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <img src="../D3/assets/volpe.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+              <h6 class="mb-0">Samuele Pieretto:</h6>
+              <p class="mb-0 opacity-75">Senti la mia playlist: pensavo che se avessi tessuto una tela bellissima, avrei
+                pescato solo pesci bellissimi.</p>
+            </div>
+            <small class="opacity-50 text-nowrap">1w</small>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <img src="../D3/assets/lontra.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+              <h6 class="mb-0">Veronica Dettori (proprietario):</h6>
+              <p class="mb-0 opacity-75">Grazie per i vostri feedback.</p>
+            </div>
+            <small class="opacity-50 text-nowrap">10s</small>
+          </div>
+        </a>
+      </div>
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+          href="../getting-started/introduction/">getting started guide</a>.</p>
+    </div>
+
+  </footer>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

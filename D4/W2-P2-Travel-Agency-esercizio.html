@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap All in One Navbar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda+One">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotron/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="carousel.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+
+        /* NAVBAR*/
+        body {
+
+            background: #eeeeee;
+
+        }
+
+        .form-inline {
+
+            display: inline-block;
+
+        }
+
+        .navbar-header.col {
+
+            padding: 0 !important;
+            
+        }
+
+        .navbar {		
+
+            background: #fff;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #d6d6d6;
+            box-shadow: 0 0 4px rgba(0,0,0,.1);
+
+        }
+
+        .nav-link img {
+
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin: -8px 0;
+            float: left;
+            margin-right: 10px;
+
+        }
+
+        .navbar .navbar-brand {
+
+            color: #555;
+            padding-left: 0;
+            padding-right: 50px;
+            font-family: 'Merienda One', sans-serif;
+
+        }
+
+        .navbar .navbar-brand i {
+
+            font-size: 20px;
+            margin-right: 5px;
+
+        }
+
+        .search-box {
+
+            position: relative;
+
+        }	
+
+        .search-box input {
+
+            box-shadow: none;
+            padding-right: 35px;
+            border-radius: 3px !important;
+
+        }
+
+        .search-box .input-group-addon {
+
+            min-width: 35px;
+            border: none;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            z-index: 9;
+            padding: 7px;
+            height: 100%;
+
+        }
+
+        .search-box i {
+
+            color: #a0a5b1;
+            font-size: 19px;
+
+        }
+
+        .navbar .nav-item i {
+
+            font-size: 18px;
+
+        }
+
+        .navbar .dropdown-item i {
+
+            font-size: 16px;
+            min-width: 22px;
+
+        }
+
+        .navbar .nav-item.open > a {
+
+            background: none !important;
+
+        }
+
+        .navbar .dropdown-menu {
+
+            border-radius: 1px;
+            border-color: #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0,0,0,.05);
+        }
+
+        .navbar .dropdown-menu a {
+
+            color: #777;
+            padding: 8px 20px;
+            line-height: normal;
+
+        }
+
+        .navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:active {
+
+            color: #333;
+
+        }	
+
+        .navbar .dropdown-item .material-icons {
+
+            font-size: 21px;
+            line-height: 16px;
+            vertical-align: middle;
+            margin-top: -2px;
+
+        }
+
+        .navbar .badge {
+
+            color: #fff;
+            background: #f44336;
+            font-size: 11px;
+            border-radius: 20px;
+            position: absolute;
+            min-width: 10px;
+            padding: 4px 6px 0;
+            min-height: 18px;
+            top: 5px;
+
+        }
+
+        .navbar a.notifications, .navbar a.messages {
+
+            position: relative;
+            margin-right: 10px;
+
+        }
+
+        .navbar a.messages {
+
+            margin-right: 20px;
+
+        }
+
+        .navbar a.notifications .badge {
+
+            margin-left: -8px;
+
+        }
+
+        .navbar a.messages .badge {
+
+            margin-left: -4px;
+
+        }	
+
+        .navbar .active a, .navbar .active a:hover, .navbar .active a:focus {
+
+            background: transparent !important;
+
+        }
+
+        @media (min-width: 1200px){
+
+            .form-inline .input-group {
+                width: 300px;
+                margin-left: 30px;
+            }
+
+        }
+
+        @media (max-width: 1199px){
+
+            .form-inline {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .input-group {
+                width: 100%;
+            }
+
+        }
+
+        /* JUMBO*/
+        .bd-placeholder-img {
+
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;  
+
+        }
+
+      @media (min-width: 768px) {
+
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+
+        }
+
+      .b-example-divider {
+
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+
+        }
+
+      .b-example-vr {
+
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+
+        }
+
+      .bi {
+
+            vertical-align: -.125em;
+            fill: currentColor;
+
+        }
+
+        #immagine-titolo {
+
+            display: flex;
+
+        }
+
+        .titolo-header svg {
+
+            margin-top: 10px;
+
+        }
+
+        /*CAROSELLO*/
+        .bd-placeholder-img {
+
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+
+        }
+
+        @media (min-width: 768px) {
+
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+
+        }
+
+        .b-example-divider {
+
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+
+        }
+
+        .b-example-vr {
+
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+
+        }
+
+        .bi {
+
+            vertical-align: -.125em;
+            fill: currentColor;
+
+        }
+
+        .descrizione-viaggio {
+
+            align-items: center;
+            display: flex;
+
+        }
+
+        .descrizione-viaggio h2{
+
+            margin-right: 30px;
+
+        }
+
+        /*
+        @media (max-width: 576px) {
+
+            .offerte-del-giorno {
+            display: none;
+            }
+
+        }
+        */
+     
+        .card {
+
+            box-shadow: 10px 10px 50px gray;
+            background-color: #EDEDED;
+            border-width: 0px;
+
+        }
+
+        .immagine-fuerte img {
+
+            width: 100%;
+
+        }
+       
+
+    </style>
+
+</head> 
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-airplane-engines" viewBox="0 0 16 16">
+                <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z"/>
+            </svg>
+            Viaggia con me!
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link active">Su di noi</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Servizi</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Offerte della settimana</a>
+                        <a href="#" class="dropdown-item">Welcome Summer</a>
+                        <a href="#" class="dropdown-item">Offerte del Giorno</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link active">Contatti</a>
+            </div>
+            <form class="navbar-form form-inline">
+                <div class="input-group search-box">								
+                    <input type="text" id="search" class="form-control" placeholder="Cerca viaggio">
+                    <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                </div>
+            </form>
+            <div class="navbar-nav ml-auto">
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action active"> Gianluca Cobucci <b class="caret"></b></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">I tuoi viaggi</a></a>
+                        <a href="#" class="dropdown-item"></i>La tua card</a></a>
+                        <a href="#" class="dropdown-item"></i>Impostazioni</a></a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="container py-4">
+
+            <header class="pb-3 mb-4 border-bottom titolo-header">
+
+                <div id="immagine-titolo">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+
+                        <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+
+                        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+
+                    </svg>
+
+                    <h1>Siamo i migliori nel campo!</h1>
+
+                </div>
+
+            </header>
+      
+            <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+
+                <div class="container-fluid py-5">
+
+                    <h1 class="display-5 fw-bold">Una breve presentazione...</h1>
+
+                    <p class="col-md-8 fs-4 jumbo-description"> Benvenuto nell'agenzia di viaggio "Viaggia con me!" Siamo qui per aiutarti a pianificare la tua prossima avventura e trasformare i tuoi sogni in realtà.
+                        La nostra agenzia di viaggio è specializzata nell'offerta di soluzioni personalizzate per ogni tipo di viaggio, che sia un'avventura emozionante o una vacanza rilassante. Siamo un team di professionisti del settore turistico, appassionati di viaggi e pronti a mettere a tua disposizione la nostra esperienza e conoscenza.
+                        La nostra vasta gamma di servizi include la prenotazione di voli, hotel, noleggio auto e crociere, nonché la programmazione di tour guidati, escursioni e attività speciali. Ogni itinerario è studiato attentamente per soddisfare le esigenze e i desideri di ogni cliente, garantendo un'esperienza di viaggio indimenticabile.
+                    </p>
+                    
+
+                </div>
+
+            </div>
+      
+            <h1>Offerta della settimana</h1>
+            <br>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>And lastly this, the third column of representative placeholder content.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                    
+                    <h2 class="fw-normal">Heading</h2>
+                    
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+  
+                  </div><!-- /.col-lg-4 -->
+
+            </div><!-- /.row -->
+
+            <hr>
+
+            <br>
+            <br>
+
+            <h1>Welcome Summer</h1>
+            <br>
+
+            <div class="row">
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>And lastly this, the third column of representative placeholder content.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                    
+                    <h2 class="fw-normal">Heading</h2>
+                    
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+  
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                    
+                    <h2 class="fw-normal">Heading</h2>
+                    
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+  
+                </div><!-- /.col-lg-4 -->
+  
+  
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+  
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                      
+                    <h2 class="fw-normal">Heading</h2>
+                      
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                      
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+    
+                </div><!-- /.col-lg-4 -->
+
+            </div><!-- /.row -->
+            <br>
+
+            <hr>
+
+            <br>
+            <br>
+
+            <div class="offerte-del-giorno d-none d-sm-block d-sm-none d-md-block">
+
+                <h1>Offerte del giorno</h1>
+                <br>
+
+                <div class="row featurette">
+
+                    <div class="col-md-8 immagine-fuerte">
+
+                        <img src="../D4/assets/frtv.jpeg"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#eee"/>
+                        
+                    </div>
+
+                    <div class="col-md-4 descrizione-viaggio">
+
+                        <h2 class="featurette-heading fw-normal lh-1">Fuerteventura 
+                            <hr>
+                            <span class="text-muted">A partire da 500€</span>
+                            <hr>
+                            <span class="text-muted">Dal 20 giugno al 20 luglio</span>
+
+                        </h2>
+                        
+                        <p class="lead">Bella, calda, piena di vita. Non ti divertirai mai abbastanza a Fuerteventura...</p>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+            <br>
+            <h1>Last Minute</h1>
+            <br>
+
+            <div class="row">
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  
+                  <h2 class="fw-normal">Heading</h2>
+                  
+                  <p>And lastly this, the third column of representative placeholder content.</p>
+                  
+                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                    
+                    <h2 class="fw-normal">Heading</h2>
+                    
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+  
+                </div><!-- /.col-lg-4 -->
+
+
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                    
+                    <h2 class="fw-normal">Heading</h2>
+                    
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+  
+                </div><!-- /.col-lg-4 -->
+  
+  
+                <div class="card col-lg-2 col-md-4 col-sm-6">
+  
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                      
+                    <h2 class="fw-normal">Heading</h2>
+                      
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                      
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+    
+                </div><!-- /.col-lg-4 -->
+
+            </div><!-- /.row -->
+
+            <hr>
+            <br>
+            <br>
+
+            <h1>Cosa dicono gli altri utenti? Leggilo in tempo reale!</h1>
+            <br>
+
+            <div class="list-group w-auto">
+
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                    <img src="../D4/assets/procione-679x350.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+
+                        <div>
+
+                            <h6 class="mb-0">Andrea Messana:</h6>
+                            <p class="mb-0 opacity-75">Ma che gusti hai... vada via ai ciapa! </p>
+
+                        </div>
+
+                        <small class="opacity-50 text-nowrap">now</small>
+
+                    </div>
+                    
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                    <img src="../D4/assets/riccio2.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+
+                        <div>
+
+                            <h6 class="mb-0">Ilde Stramandinoli:</h6>
+                            <p class="mb-0 opacity-75">Ora capisco perchè ci sono pochi programmatori...</p>
+
+                        </div>
+
+                        <small class="opacity-50 text-nowrap">3d</small>
+
+                    </div>
+
+                </a>
+                
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                    <img src="../D4/assets/Balto-05-e-commerce.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+
+                        <div>
+
+                            <h6 class="mb-0">Gianluca Cobucci:</h6>
+                            <p class="mb-0 opacity-75">Mi vengono in mente le parole del mio artista preferito: quando hanno distruibuito l'altezza, lui era in fila per la carbonara...</p>
+                        
+                        </div>
+
+                        <small class="opacity-50 text-nowrap">1w</small>
+
+                    </div>
+
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                    <img src="../D4/assets/volpe.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+
+                        <div>
+
+                            <h6 class="mb-0">Samuele Pieretto:</h6>
+                            <p class="mb-0 opacity-75">Senti la mia playlist: pensavo che se avessi tessuto una tela bellissima, avrei pescato solo pesci bellissimi.</p>
+                        
+                        </div>
+
+                        <small class="opacity-50 text-nowrap">1w</small>
+
+                    </div>
+
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                    <img src="../D4/assets/lontra.jpeg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+
+                        <div>
+
+                            <h6 class="mb-0">Veronica Dettori (proprietario):</h6>
+
+                            <p class="mb-0 opacity-75">Grazie per i vostri feedback.</p>
+
+                        </div>
+
+                        <small class="opacity-50 text-nowrap">10s</small>
+
+                    </div>
+
+                </a>
+
+            </div>
+            
+            
+            
+      
+            <footer class="pt-3 mt-4 border-top">
+
+                &copy; 2022
+
+                <button>Contattaci</button>
+
+            </footer>
+
+        </div>
+        
+    </main>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>                            
